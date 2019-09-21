@@ -5,9 +5,10 @@ export default class Navbar extends Component {
     render(){
         return(
             <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-                <Link to="/" className="navbar-brand">ExerciseTracker</Link>
-                <div className="collapse navbar-collapse">
-                <ul className="navbar-nav mr-auto">
+              
+                <Link to="/" className="navbar-brand">JustWorkout</Link>
+                <div className="navbar-collapse" id="navList">
+                <ul className="navbar-nav ml-auto">
                     <li className="navbar-item">
                         <Link to="/" className="nav-link">Exercises</Link>
                     </li>
@@ -19,6 +20,7 @@ export default class Navbar extends Component {
                     </li>
                 </ul>
                 </div>
+            
             </nav>
         );
     }
