@@ -12,7 +12,7 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "(cd backend && nodemon server.js)",
+    "start": "(cd backend && npm run)",
 	"start2":"react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

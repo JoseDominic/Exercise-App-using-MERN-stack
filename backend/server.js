@@ -1,10 +1,22 @@
 const express = require('express'); //nodejs framework for creating web apps
 const cors = require('cors');
 const mongoose = require('mongoose');
+const path = require('path');
 
 require('dotenv').config(); //for setting environment variables on server
 
 const app = express(); //creating the app
+
+//Serve static assets if in production
+if(process.env.NODE_ENV ==='production'){
+	//Set static folder
+	app.use(express.static('../build'));
+
+	app.get('*',(req, res) => {
+		res.sendFile(path.resolve(__dirname,'/../','build','index.html'));
+	});
+}
+////////////////////////////////////////
 const port = process.env.PORT || 5000;
 
 app.use(cors()); //for cross origin resource sharing ie.cross domain requests
