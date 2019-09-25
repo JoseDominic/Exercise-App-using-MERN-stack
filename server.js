@@ -22,7 +22,8 @@ const port = process.env.PORT || 5000;
 app.use(cors()); //for cross origin resource sharing ie.cross domain requests
 app.use(express.json()); //for handling json data
 
-const uri = process.env.ATLAS_URI;
+const uri="mongodb+srv://jose:1234@exercisecluster-rmqkg.gcp.mongodb.net/test?retryWrites=true&w=majority"
+//const uri = process.env.ATLAS_URI;
 mongoose.connect(uri,{ useNewUrlParser: true, useCreateIndex: true ,useUnifiedTopology: true });
 const connection = mongoose.connection;
 connection.once('open',() => {
