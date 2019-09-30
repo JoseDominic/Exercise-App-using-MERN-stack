@@ -24,7 +24,7 @@ app.use(express.json()); //for handling json data
 
 //const uri="mongodb+srv://jose:1234@exercisecluster-rmqkg.gcp.mongodb.net/test?retryWrites=true&w=majority"
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri,{ useNewUrlParser: true, useCreateIndex: true ,useUnifiedTopology: true }).catch(error => handleError(error));;
+mongoose.connect(uri,{ useNewUrlParser: true, useCreateIndex: true ,useUnifiedTopology: true });
 const connection = mongoose.connection;
 connection.once('open',() => {
     console.log('Database connection established successfully');
